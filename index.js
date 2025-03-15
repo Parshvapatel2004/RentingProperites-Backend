@@ -6,6 +6,7 @@ const { Admin } = require("./APIs/Admin");
 const { Owner } = require("./APIs/Owner");
 const { User } = require("./APIs/User");
 const { Booking } = require("./APIs/Booking");
+const { Request } = require("./APIs/Request");
 
 dbConnect();
 
@@ -19,6 +20,7 @@ app.post("/Admin", Admin);
 app.post("/Owner", Owner);
 app.post("/User", User);
 app.post("/Booking",Booking);
+app.post("/Request",Request);
 
 const PORT = 8000;
 app.listen(PORT);
