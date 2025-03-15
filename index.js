@@ -9,6 +9,7 @@ const { Booking } = require("./APIs/Booking");
 const { Request } = require("./APIs/Request");
 const { Payment } = require("./APIs/Payment");
 const { Feedback } = require("./APIs/Feedback");
+const { Property } = require("./APIs/Property");
 
 dbConnect();
 
@@ -25,6 +26,7 @@ app.post("/Booking", Booking);
 app.post("/Request", Request);
 app.post("/Payment", Payment);
 app.post("/Feedback", Feedback);
+app.post("/Property", Property);
 
 const PORT = 8000;
 app.listen(PORT);
