@@ -4,6 +4,7 @@ const cors = require("cors");
 const { Login } = require("./APIs/Login");
 const { Admin } = require("./APIs/Admin");
 const { Owner } = require("./APIs/Owner");
+const { User } = require("./APIs/User");
 
 dbConnect();
 
@@ -14,7 +15,8 @@ app.use(cors());
 
 app.post("/Login", Login);
 app.post("/Admin", Admin);
-app.post("/Owner",Owner);
+app.post("/Owner", Owner);
+app.post("/User", User);
 
 const PORT = 8000;
 app.listen(PORT);
