@@ -10,6 +10,7 @@ const { Request } = require("./APIs/Request");
 const { Payment } = require("./APIs/Payment");
 const { Feedback } = require("./APIs/Feedback");
 const { Property } = require("./APIs/Property");
+const { Inquiry } = require("./APIs/Inquiry");
 
 dbConnect();
 
@@ -27,6 +28,7 @@ app.post("/Request", Request);
 app.post("/Payment", Payment);
 app.post("/Feedback", Feedback);
 app.post("/Property", Property);
+app.post("/Inquiry", Inquiry);
 
 const PORT = 8000;
 app.listen(PORT);
