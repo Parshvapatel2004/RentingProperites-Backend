@@ -37,4 +37,4 @@ app.post("/send_inquiry", Send_Inquiry);
 //port:
 const PORT = 8000;
 app.listen(PORT);
-console.log(`Server is listing on port http:localhost:${PORT}`);
+//console.log(`Server is listing on port http:localhost:${PORT}`);

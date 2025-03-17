@@ -22,7 +22,7 @@ async function Send_Inquiry(req, res) {
       resolutionDate,
       response,
     });
-    return res.status(200).json({ message: "Data Stored Successfully" });
+    return res.status(200).json({ message: "Inquiry Send Successfully" });
   } catch (error) {
     console.log(error);
     return res.status(500).json({ message: "Internal Server error" });

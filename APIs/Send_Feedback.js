@@ -14,7 +14,7 @@ async function Send_Feedback(req, res) {
       response,
       comments,
     });
-    return res.status(200).json({ message: "Data Stored Successfully" });
+    return res.status(200).json({ message: "Feedback send Successfully" });
   } catch (error) {
     console.log(error);
     return res.status(500).json({ message: "Internal Server error" });
