@@ -1,24 +1,19 @@
 const connectDB = require("../DB/db.Connect");
 
-async function Inquiry(req, res) {
+async function Send_Request(req, res) {
   try {
     const db = await connectDB();
-    const collection = db.collection("Inquiry");
-    const {
-      inquiry_Id,
-      user_Id,
-      inquiryDate,
-      subject,
-      status,
-      resolutionDate,
-    } = req.body;
+    const collection = db.collection("Request");
+    const { request_Id, user_Id, property_Id, owner_Id, startDate, endDate } =
+      req.body;
     await collection.insertOne({
-      inquiry_Id,
+      request_Id,
       user_Id,
-      inquiryDate,
-      subject,
-      status,
-      resolutionDate,
+      property_Id,
+      owner_Id,
+      startDate,
+      endDate,
+      status: "Pending",
     });
     return res.status(200).json({ message: "Data Stored Successfully" });
   } catch (error) {
@@ -27,4 +22,4 @@ async function Inquiry(req, res) {
   }
 }
 
-module.exports = { Inquiry };
+module.exports = { Send_Request };

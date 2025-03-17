@@ -1,15 +1,17 @@
 const connectDB = require("../DB/db.Connect");
 
-async function Feedback(req, res) {
+async function Send_Feedback(req, res) {
   try {
     const db = await connectDB();
     const collection = db.collection("Feedback");
-    const { feedback_Id, user_Id, feedbackDate, rating, comments } = req.body;
+    const { feedback_Id, user_Id, feedbackDate, rating, response, comments } =
+      req.body;
     await collection.insertOne({
       feedback_Id,
       user_Id,
       feedbackDate,
       rating,
+      response,
       comments,
     });
     return res.status(200).json({ message: "Data Stored Successfully" });
@@ -19,4 +21,4 @@ async function Feedback(req, res) {
   }
 }
 
-module.exports = { Feedback };
+module.exports = { Send_Feedback };
