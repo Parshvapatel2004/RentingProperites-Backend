@@ -4,13 +4,13 @@ async function Feedback(req, res) {
   try {
     const db = await connectDB();
     const collection = db.collection("Feedback");
-    const { Feedback_Id, User_Id, FeedbackDate, Rating, Comments } = req.body;
+    const { feedback_Id, user_Id, feedbackDate, rating, comments } = req.body;
     await collection.insertOne({
-      Feedback_Id,
-      User_Id,
-      FeedbackDate,
-      Rating,
-      Comments,
+      feedback_Id,
+      user_Id,
+      feedbackDate,
+      rating,
+      comments,
     });
     return res.status(200).json({ message: "Data Stored Successfully" });
   } catch (error) {

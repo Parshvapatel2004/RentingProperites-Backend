@@ -5,22 +5,22 @@ async function Request(req, res) {
     const db = await connectDB();
     const collection = db.collection("Request");
     const {
-      Request_Id,
-      User_Id,
-      Property_Id,
-      Owner_Id,
-      StartDate,
-      EndDate,
-      Status,
+      request_Id,
+      user_Id,
+      property_Id,
+      owner_Id,
+      startDate,
+      endDate,
+      status,
     } = req.body;
     await collection.insertOne({
-      Request_Id,
-      User_Id,
-      Property_Id,
-      Owner_Id,
-      StartDate,
-      EndDate,
-      Status,
+      request_Id,
+      user_Id,
+      property_Id,
+      owner_Id,
+      startDate,
+      endDate,
+      status,
     });
     return res.status(200).json({ message: "Data Stored Successfully" });
   } catch (error) {
