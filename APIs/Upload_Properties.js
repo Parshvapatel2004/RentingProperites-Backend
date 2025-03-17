@@ -26,25 +26,25 @@ async function Upload_Properties(req, res) {
     } = req.body;
     await collection.insertOne({
       property_Id,
-            title,
-            description,
-            location,
-            address,
-            zipCode,
-            propertyType,
-            category,
-            size,
-            price,
-            bedrooms,
-            bathrooms,
-            images: [],
-            propertyIdentityType,
-            propertyProof: [],
-            amenities: [],
-            identityType,
-            identityId,
+      title,
+      description,
+      location,
+      address,
+      zipCode,
+      propertyType,
+      category,
+      size,
+      price,
+      bedrooms,
+      bathrooms,
+      images: [],
+      propertyIdentityType,
+      propertyProof: [],
+      amenities: [],
+      identityType,
+      identityId,
     });
-    return res.status(200).json({ message: "Data Stored Successfully" });
+    return res.status(200).json({ message: "Property upload Successfully" });
   } catch (error) {
     console.log(error);
     return res.status(500).json({ message: "Internal Server error" });
