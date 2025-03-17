@@ -4,12 +4,10 @@ async function Feedback(req, res) {
   try {
     const db = await connectDB();
     const collection = db.collection("Feedback");
-    const { feedback_Id, user_Id, owner_Id, feedbackDate, rating, comments } =
-      req.body;
+    const { feedback_Id, user_Id, feedbackDate, rating, comments } = req.body;
     await collection.insertOne({
       feedback_Id,
       user_Id,
-      owner_Id,
       feedbackDate,
       rating,
       comments,
