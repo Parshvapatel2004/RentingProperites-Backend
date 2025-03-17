@@ -4,13 +4,13 @@ async function Admin(req, res) {
   try {
     const db = await connectDB();
     const collection = db.collection("Admin");
-    const { Admin_id, FirstName, LastName, Email, Password } = req.body;
+    const { admin_Id, firstName, lastName, email, password } = req.body;
     await collection.insertOne({
-      Admin_id,
-      FirstName,
-      LastName,
-      Email,
-      Password,
+      admin_Id,
+      firstName,
+      lastName,
+      email,
+      password,
     });
     return res.status(200).json({ message: "Data Stored Successfully" });
   } catch (error) {

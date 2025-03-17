@@ -5,26 +5,26 @@ async function Payment(req, res) {
     const db = await connectDB();
     const collection = db.collection("Payment");
     const {
-      Payment_Id,
-      User_Id,
-      Admin_Id,
-      Booking_Id,
-      Amount,
-      Payment_Date,
-      Payment_Method,
-      Transaction_Id,
-      Status,
+      payment_Id,
+      user_Id,
+      admin_Id,
+      booking_Id,
+      amount,
+      paymentDate,
+      paymentMethod,
+      transaction_Id,
+      status,
     } = req.body;
     await collection.insertOne({
-      Payment_Id,
-      User_Id,
-      Admin_Id,
-      Booking_Id,
-      Amount,
-      Payment_Date,
-      Payment_Method,
-      Transaction_Id,
-      Status,
+      payment_Id,
+      user_Id,
+      admin_Id,
+      booking_Id,
+      amount,
+      paymentDate,
+      paymentMethod,
+      transaction_Id,
+      status,
     });
     return res.status(200).json({ message: "Data Stored Successfully" });
   } catch (error) {

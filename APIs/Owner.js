@@ -5,24 +5,24 @@ async function Owner(req, res) {
     const db = await connectDB();
     const collection = db.collection("Owner");
     const {
-      Owner_id,
-      Identity_id,
-      FirstName,
-      LastName,
-      Email,
-      Password,
-      PhoneNo,
-      Address,
+      owner_Id,
+      identity_Id,
+      firstName,
+      lastName,
+      email,
+      password,
+      phoneNo,
+      address,
     } = req.body;
     await collection.insertOne({
-      Owner_id,
-      Identity_id,
-      FirstName,
-      LastName,
-      Email,
-      Password,
-      PhoneNo,
-      Address,
+      owner_Id,
+      identity_Id,
+      firstName,
+      lastName,
+      email,
+      password,
+      phoneNo,
+      address,
     });
     return res.status(200).json({ message: "Data store Successfully" });
   } catch (error) {

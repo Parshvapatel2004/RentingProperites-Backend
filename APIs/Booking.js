@@ -5,24 +5,24 @@ async function Booking(req, res) {
     const db = await connectDB();
     const collection = db.collection("Booking");
     const {
-      Booking_Id,
-      User_Id,
-      Property_Id,
-      Owner_Id,
-      Booking_Date,
-      StartDate,
-      EndDate,
-      Status,
+      booking_Id,
+      user_Id,
+      property_Id,
+      owner_Id,
+      bookingDate,
+      startDate,
+      endDate,
+      status,
     } = req.body;
     await collection.insertOne({
-      Booking_Id,
-      User_Id,
-      Property_Id,
-      Owner_Id,
-      Booking_Date,
-      StartDate,
-      EndDate,
-      Status,
+      booking_Id,
+      user_Id,
+      property_Id,
+      owner_Id,
+      bookingDate,
+      startDate,
+      endDate,
+      status,
     });
     return res.status(200).json({ message: "Data Stored Successfully" });
   } catch (error) {
