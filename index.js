@@ -12,6 +12,7 @@ const { Register_Owner } = require("./APIs/Register_Owner");
 const { Send_Inquiry } = require("./APIs/Send_Inquiry");
 const { Send_Feedback } = require("./APIs/Send_Feedback");
 const { Send_Request } = require("./APIs/Send_Request");
+const { contactUs } = require("./APIs/contactUs");
 
 //connecting to database:
 dbConnect();
@@ -33,6 +34,7 @@ app.post("/payment", Payment);
 app.post("/send_feedback", Send_Feedback);
 app.post("/upload_properties", Upload_Properties);
 app.post("/send_inquiry", Send_Inquiry);
+app.post("/contact_us", contactUs);
 
 //port:
 const PORT = 8000;
