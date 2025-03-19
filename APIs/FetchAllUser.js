@@ -1,9 +1,9 @@
 const connectDB = require("../DB/db.Connect");
 
-async function FetchOwnerUserApi(req, res) {
+async function FetchAllUser(req, res) {
   try {
     const db = await connectDB();
-    const collection = db.collection("Login");
+    const collection = db.collection("Register");
     const userData = await collection.find().toArray();
     if (userData.length == 0) {
       res.status(400).json({ message: "No user found" });
@@ -16,4 +16,4 @@ async function FetchOwnerUserApi(req, res) {
   }
 }
 
-module.exports = { FetchOwnerUserApi };
+module.exports = { FetchAllUser };
