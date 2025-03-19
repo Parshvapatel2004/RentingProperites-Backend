@@ -13,6 +13,8 @@ const { Send_Inquiry } = require("./APIs/Send_Inquiry");
 const { Send_Feedback } = require("./APIs/Send_Feedback");
 const { Send_Request } = require("./APIs/Send_Request");
 const { contactUs } = require("./APIs/contactUs");
+const { FetchOwnerUserApi } = require("./APIs/FetchOwnerUserApi");
+const { PropertyFetch } = require("./APIs/PropertyFetch");
 
 //connecting to database:
 dbConnect();
@@ -35,6 +37,8 @@ app.post("/send_feedback", Send_Feedback);
 app.post("/upload_properties", Upload_Properties);
 app.post("/send_inquiry", Send_Inquiry);
 app.post("/contact_us", contactUs);
+app.get("/fetch_owner_user", FetchOwnerUserApi);
+app.get("/property_fetch", PropertyFetch);
 
 //port:
 const PORT = 8000;
