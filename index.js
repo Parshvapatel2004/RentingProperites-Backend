@@ -14,6 +14,10 @@ const { contactUs } = require("./APIs/contactUs");
 const { FetchAllUser } = require("./APIs/FetchAllUser");
 const { PropertyFetch } = require("./APIs/PropertyFetch");
 const { Login } = require("./APIs/Login");
+const { FetchRequest } = require("./APIs/FetchRequest");
+const { FetchFeedback } = require("./APIs/FetchFeedback");
+const { FetchAllOwner } = require("./APIs/FetchAllOwner");
+const { FetchInquiry } = require("./APIs/FetchInquiry");
 
 //connecting to database:
 dbConnect();
@@ -37,6 +41,10 @@ app.post("/contact_us", contactUs);
 app.get("/fetchalluser", FetchAllUser);
 app.get("/property_fetch", PropertyFetch);
 app.post("/login", Login);
+app.get("/fetchrequest", FetchRequest);
+app.get("/fetchfeedback", FetchFeedback);
+app.get("/fetchallowner", FetchAllOwner);
+app.get("/fetchinquiry", FetchInquiry);
 
 //port:
 const PORT = 8000;
