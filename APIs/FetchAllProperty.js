@@ -1,6 +1,6 @@
 const connectDB = require("../DB/db.Connect");
 
-async function PropertyFetch(req, res) {
+async function FetchAllProperty(req, res) {
   try {
     const db = await connectDB();
     const collection = db.collection("Property");
@@ -16,4 +16,4 @@ async function PropertyFetch(req, res) {
   }
 }
 
-module.exports = { PropertyFetch };
+module.exports = { FetchAllProperty };
