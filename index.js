@@ -2,7 +2,6 @@ const dbConnect = require("./DB/db.Connect");
 const express = require("express");
 const cors = require("cors");
 const { Register_User } = require("./APIs/Register_User");
-const { User } = require("./APIs/User");
 const { Upload_Properties } = require("./APIs/Upload_Properties");
 const { Register_Owner } = require("./APIs/Register_Owner");
 const { Send_Inquiry } = require("./APIs/Send_Inquiry");
@@ -35,30 +34,37 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors());
 
+// routes:
+//user routes:
 app.post("/register_user", Register_User);
-app.post("/register_owner", Register_Owner);
-app.post("/user", User);
 app.post("/makebooking", Make_Booking);
-app.post("/send_request", Send_Request);
 app.post("/make_payment", Make_Payment);
-app.post("/send_feedback", Send_Feedback);
+
+// owner routes:
+app.post("/register_owner", Register_Owner);
 app.post("/upload_properties", Upload_Properties);
-app.post("/send_inquiry", Send_Inquiry);
+app.get("/manage_booking", manage_booking);
+app.get("/manage_property", manage_property);
+app.get("/view_payment", view_payments);
+
+// Common routes:
+app.post("/login", Login);
 app.post("/contact_us", contactUs);
+app.post("/send_inquiry", Send_Inquiry);
+app.post("/send_request", Send_Request);
+app.post("/send_feedback", Send_Feedback);
+app.post("/sendcomplaint", Send_Complaint);
+
+// admin routes:
 app.get("/fetchalluser", FetchAllUser);
 app.get("/fetchallproperty", FetchAllProperty);
-app.post("/login", Login);
 app.get("/fetchrequest", FetchRequest);
 app.get("/fetchfeedback", FetchFeedback);
 app.get("/fetchallowner", FetchAllOwner);
 app.get("/fetchinquiry", FetchInquiry);
-app.post("/sendcomplaint", Send_Complaint);
 app.get("/fetchcomplaint", FetchAllComplaint);
 app.get("/fetchallbookings", FetchAllBooking);
 app.get("/fetchallpayment", FetchAllPayments);
-app.get("/manage_booking", manage_booking);
-app.get("/manage_property", manage_property);
-app.get("/view_payment", view_payments);
 
 //port:
 const PORT = 8000;
