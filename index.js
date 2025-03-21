@@ -3,7 +3,6 @@ const express = require("express");
 const cors = require("cors");
 const { Register_User } = require("./APIs/Register_User");
 const { User } = require("./APIs/User");
-const { Payment } = require("./APIs/Payment");
 const { Upload_Properties } = require("./APIs/Upload_Properties");
 const { Register_Owner } = require("./APIs/Register_Owner");
 const { Send_Inquiry } = require("./APIs/Send_Inquiry");
@@ -21,6 +20,11 @@ const { FetchAllComplaint } = require("./APIs/FetchAllComplaint");
 const { Make_Booking } = require("./APIs/Make_Booking");
 const { FetchAllBooking } = require("./APIs/FetchAllBooking");
 const { FetchAllProperty } = require("./APIs/FetchAllProperty");
+const { FetchAllPayments } = require("./APIs/FetchAllPayments");
+const { Make_Payment } = require("./APIs/Make_payment");
+const { manage_booking } = require("./APIs/manage_booking");
+const { manage_property } = require("./APIs/manage_property");
+const { view_payments } = require("./APIs/view_payment");
 
 //connecting to database:
 dbConnect();
@@ -36,7 +40,7 @@ app.post("/register_owner", Register_Owner);
 app.post("/user", User);
 app.post("/makebooking", Make_Booking);
 app.post("/send_request", Send_Request);
-app.post("/payment", Payment);
+app.post("/make_payment", Make_Payment);
 app.post("/send_feedback", Send_Feedback);
 app.post("/upload_properties", Upload_Properties);
 app.post("/send_inquiry", Send_Inquiry);
@@ -51,6 +55,10 @@ app.get("/fetchinquiry", FetchInquiry);
 app.post("/sendcomplaint", Send_Complaint);
 app.get("/fetchcomplaint", FetchAllComplaint);
 app.get("/fetchallbookings", FetchAllBooking);
+app.get("/fetchallpayment", FetchAllPayments);
+app.get("/manage_booking", manage_booking);
+app.get("/manage_property", manage_property);
+app.get("/view_payment", view_payments);
 
 //port:
 const PORT = 8000;

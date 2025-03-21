@@ -6,6 +6,7 @@ async function Upload_Properties(req, res) {
     const collection = db.collection("Property");
     const {
       property_Id,
+      owner_Id,
       title,
       description,
       location,
@@ -26,6 +27,7 @@ async function Upload_Properties(req, res) {
     } = req.body;
     await collection.insertOne({
       property_Id,
+      owner_Id,
       title,
       description,
       location,
