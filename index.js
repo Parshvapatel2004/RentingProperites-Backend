@@ -24,6 +24,7 @@ const { Make_Payment } = require("./APIs/Make_payment");
 const { manage_booking } = require("./APIs/manage_booking");
 const { manage_property } = require("./APIs/manage_property");
 const { view_payments } = require("./APIs/view_payment");
+const { UpdateProfile } = require("./APIs/UpdateProfie");
 
 //connecting to database:
 dbConnect();
@@ -54,6 +55,7 @@ app.post("/send_inquiry", Send_Inquiry);
 app.post("/send_request", Send_Request);
 app.post("/send_feedback", Send_Feedback);
 app.post("/sendcomplaint", Send_Complaint);
+app.post("/updateprofile", UpdateProfile);
 
 // admin routes:
 app.get("/fetchalluser", FetchAllUser);
