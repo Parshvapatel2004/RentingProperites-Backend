@@ -25,6 +25,7 @@ const { manage_booking } = require("./APIs/manage_booking");
 const { manage_property } = require("./APIs/manage_property");
 const { view_payments } = require("./APIs/view_payment");
 const { UpdateProfile } = require("./APIs/UpdateProfie");
+const { UpdateProperty } = require("./APIs/UpdateProperty");
 
 //connecting to database:
 dbConnect();
@@ -47,6 +48,7 @@ app.post("/upload_properties", Upload_Properties);
 app.get("/manage_booking", manage_booking);
 app.get("/manage_property", manage_property);
 app.get("/view_payment", view_payments);
+app.post("/update_property", UpdateProperty);
 
 // Common routes:
 app.post("/login", Login);
